@@ -13,13 +13,13 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "rest.settings")
 
 # Create your views here.
-@api_view(["GET"])
+@api_view(["POST"])
 def api_home(request, *args, **kwargs):
 
-    instance = Product.objects.all().order_by("?").first()
+    serializer = ProductSerializer(data=request.data)
 
-    data = {}
-    if instance:
-        data = ProductSerializer(instance).data
-    
-    return Response(data)
+    if serializer.is_valid(raise_exception=True):
+        data = serializer.data
+        print(data)
+        return Response(data)
+    return Response({"invalid": "invalid data inputted"}, status=400)

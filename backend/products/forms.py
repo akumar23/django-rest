@@ -1,4 +1,3 @@
-from dataclasses import fields
 from django import forms
 from .models import Product
 
@@ -8,5 +7,5 @@ class ProductForm(forms.ModelForm):
         fields = [
             'title',
             'content',
-            'price'
+            'price',        
         ]
