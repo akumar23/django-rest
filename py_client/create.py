@@ -4,7 +4,7 @@ import requests
 endpoint = "http://127.0.0.1:8000/api/products/"
 
 data = {
-    "title":"data1"
+    "title":"newest data here"
 }
 
 #get response with abc:123 as a param and hellow as a json query
