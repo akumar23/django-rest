@@ -10,3 +10,5 @@ requests==2.28.1
 sqlparse==0.4.2
 urllib3==1.26.11
 djangorestframework
+gunicorn
+martor
