@@ -25,6 +25,9 @@ blocks:
             - python manage.py test
         - name: Checklist
           commands:
+            - sem-version python 3.9
+            - checkout
+            - cache restore
             - cd restapi
             - cd backend
             - python manage.py check --deploy
